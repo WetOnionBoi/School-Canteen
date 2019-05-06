@@ -6,4 +6,3 @@ Possible Versions
 
 -Version 2.0 - In this version I will create a basic GUI for my website.
 
--Version 3.0 - 
