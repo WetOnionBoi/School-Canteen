@@ -15,11 +15,16 @@ class Canteen:
 
 
     #Test Data
-Food = [
+Food =    [
           Canteen("Sushi Roll pack", 5),
           Canteen("Hot dog and Chips",  12),
           Canteen("Ham and Cheese Sandwiches", 4)
           ]
 
-run(host='0.0.0.0', port = 8080, reloader=True, debug=True)
+@route("/")
+@view("index")
+def index():
+    #need this function to attach the decorators above.
+    pass
 
+run(host='0.0.0.0', port = 8080, reloader=True, debug=True)
