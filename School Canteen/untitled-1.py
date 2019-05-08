@@ -15,7 +15,7 @@ class Canteen:
 
 
     #Test Data
-Food =    [
+food =    [
           Canteen("Sushi Roll pack", 5),
           Canteen("Hot dog and Chips",  12),
           Canteen("Ham and Cheese Sandwiches", 4)
