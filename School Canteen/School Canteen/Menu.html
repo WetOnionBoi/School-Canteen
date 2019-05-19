@@ -1,0 +1,34 @@
+<html>
+%include('shared/header.html')
+%include('shared/navbar.html')
+	<body class = "transparent">
+		<div class="row">
+		
+		
+			<div class="col s12">Menu</div>
+			% for item in menu_list:
+				<div class="card">
+				<div class="card blue-grey darken-1">
+				<div class="card-content yellow-text">
+				<h4><b>{{item.name}}</b></h4>  
+				<p><img src="picture/{{item.image}}" style = "width:300px;height;400px"> <br>
+				<p>{{item.stock}} lots in stock</p>
+				<p>{{item.price}} dollar dollar bills yo</p>
+				
+				%if item.stock > 0:
+					<form method="post" action='/purchase-success/{{item.id}}'>
+					<button type="submit">Purchase</button>
+					</form>	
+ 
+				%else:
+					<button type="button" disabled>None left in stock</button>	
+				
+				</div>
+				</div>
+            
+			%end
+    </div>
+	
+	
+	</body>
+</html>
