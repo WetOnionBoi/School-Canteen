@@ -43,9 +43,21 @@ def purchase_success(item_id):
         if item.id == item_id:
             found_item  = item
     data = dict(item = found_item)
-    found_item.food_stock = found_item.food_stock - 1   #minus 1 from the amount of items in stock
+    found_item.stock += 1   #minus 1 from the amount of items in stock
     return data 
 
+@route()
+@view('add-stock')
+def add_stock():
+    item_id = int(item_id)
+    found_item = None   
+    for item in food: 
+        if item.id == item_id:
+            found_item  = item
+    data = dict(item = found_item)
+    found_item.stock += 1   #minus 1 from the amount of items in stock
+    return data     
+    
 
 @route('/picture/<filename>')
 def serve_picture(filename):

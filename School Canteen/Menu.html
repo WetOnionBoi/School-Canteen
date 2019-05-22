@@ -16,7 +16,7 @@
 				<p>{{item.price}} dollar dollar bills yo</p>
 				
 				%if item.stock > 0:
-					<form method="post" action='/purchase-success/<item_id>'>
+					<form method="post" action='/purchase-success/{{item.id}}'>
 					<button type="submit">Purchase</button>
 					</form>	
  
