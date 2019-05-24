@@ -43,10 +43,9 @@ def purchase_success(item_id):
         if item.id == item_id:
             found_item  = item
     data = dict(item = found_item)
-    found_item.food_stock = found_item.food_stock - 1   #minus 1 from the amount of items in stock
+    found_item.stock += 1   #minus 1 from the amount of items in stock
     return data 
-
-
+    
 @route('/picture/<filename>')
 def serve_picture(filename):
     return static_file(filename, root = './Images')
