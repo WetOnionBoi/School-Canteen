@@ -50,10 +50,15 @@ def purchase_success(item_id):
 def serve_picture(filename):
     return static_file(filename, root = './Images')
 
+@route("/restock")
+@view("restock")
+def restock():
+    data = dict (menu_list = food)
+    return data
 
 @route('/restock/<item_id>', method = 'POST')
-@view ('restock')
-def restock(item_id):
+@view ('restock-success')
+def restock_success(item_id):
     item_id = int(item_id)
     found_item = None
     for item in food:
