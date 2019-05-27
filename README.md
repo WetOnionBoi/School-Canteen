@@ -10,4 +10,6 @@ Possible Versions
 
 -Version 4.0 - In this version I will add pictures to my menu.
 
--Version 5.0 - In this version I added a buy option that lets the user purchase product.
+-Version 5.0 - In this version I will add a buy option that lets the user purchase product.
+
+-Version 6.0 - In this version I will add a restock button
