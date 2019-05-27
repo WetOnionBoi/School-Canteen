@@ -25,7 +25,7 @@ food =    [
 @route("/")
 @view("index")
 def index():
-    #need this function to attach the decorators above.
+    #need this function to attach the decorators.
     pass
 
 @route("/menu")
@@ -43,11 +43,29 @@ def purchase_success(item_id):
         if item.id == item_id:
             found_item  = item
     data = dict(item = found_item)
-    found_item.stock += 1   #minus 1 from the amount of items in stock
+    found_item.stock -= 1   #minus 1 from the amount of items in stock
     return data 
     
 @route('/picture/<filename>')
 def serve_picture(filename):
     return static_file(filename, root = './Images')
+
+@route("/restock")
+@view("restock")
+def restock():
+    data = dict (menu_list = food)
+    return data
+
+@route('/restock/<item_id>', method = 'POST')
+@view ('restock-success')
+def restock_success(item_id):
+    item_id = int(item_id)
+    found_item = None
+    for item in food:
+        if item.id == item_id:
+            found_item = item
+    data = dict (item = found_item)
+    found_item.stock += 1  
+    return data
 
 run(host='0.0.0.0', port = 8080, reloader=True, debug=True)
