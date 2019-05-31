@@ -65,7 +65,9 @@ def restock_success(item_id):
         if item.id == item_id:
             found_item = item
     data = dict (item = found_item)
-    found_item.stock += 1  
+    quantity = request.forms.get('quantity')
+    quantity = int(quantity)
+    found_item.stock += quantity
     return data
 
 run(host='0.0.0.0', port = 8080, reloader=True, debug=True)
