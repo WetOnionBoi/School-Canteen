@@ -14,7 +14,7 @@
 				<p><img src="picture/{{item.image}}" style = "width:300px;height;400px"> <br>
 				<p>{{item.stock}} lots in stock</p>
 				
-				<form class="col s12" action="/restock/{{item.id}}" method="post"> <!--Form for inputing how much stock is to be increased by -->
+				<form class="col s12" action="/restock/{{item.id}}" method="post"> <!--Form to input how much stock is to be increased by -->
 					<div class="row ">
 						<input class="yellow-text" placeholder ="Input here how much to increase stock by" id="quantity" type="number" name="quantity" class="validate" min="0">
 						<a href = '/restock/{{item.id}}'><button class="btn waves-effect waves-light yellow black-text" type="submit" name="action">Restock</button> </a>
