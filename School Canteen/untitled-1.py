@@ -7,19 +7,20 @@ class Canteen:
     #signifies a private variable. not to be used outside of this class.
     _ids = count (0)
 
-    def __init__(self, food_name, food_image, food_stock, food_price ):
+    def __init__(self, food_name, food_image, food_stock, food_price, food_total ):
         #not passing ID as we want it to create it.
         self.id = next(self._ids)
         self.name = food_name
         self.image = food_image
         self.stock = food_stock
         self.price = food_price
-
+        self.total = food_total
+        
     #Test Data
 food =    [
-          Canteen("Sushi Roll pack", "sushdiggity.jpg", 5, "$10"),
-          Canteen("Hot dog and Chips", "hotdiggity.jpg",  12, "$8"),
-          Canteen("Ham and Cheese Sandwiches", "hamdiggity.jpg", 4, "$5")
+          Canteen("Sushi Roll pack", "sushdiggity.jpg", 5, "$10", 0),
+          Canteen("Hot dog and Chips", "hotdiggity.jpg",  12, "$8", 0),
+          Canteen("Ham and Cheese Sandwiches", "hamdiggity.jpg", 4, "$5", 0)
           ]
 
 @route("/")
@@ -44,6 +45,7 @@ def purchase_success(item_id):
             found_item  = item
     data = dict(item = found_item)
     found_item.stock -= 1   #minus 1 from the amount of items in stock
+    found_item.total += 1
     return data 
     
 @route('/picture/<filename>')
