@@ -13,3 +13,5 @@ Possible Versions
 -Version 5.0 - In this version I will add a buy option that lets the user purchase product.
 
 -Version 6.0 - In this version I will add a restock button
+
+-Version 7.0 - In this version I will make my restock able to restock more then 1 at a time and make it able to show the total amount of everything sold
